@@ -24,13 +24,13 @@ queue<int> reverseElements(queue<int> q, int k)
         q.pop();
     }
 
-    while (!q2.empty())
-    {
-        cout << q2.front() << " ";
-        q2.pop();
-    }
-    cout << endl;
-    return q;
+    // while (!q2.empty())
+    // {
+    //     cout << q2.front() << " ";
+    //     q2.pop();
+    // }
+    // cout << endl;
+    return q2;
 }
 
 void input_queue(queue<int> &q, int n)
