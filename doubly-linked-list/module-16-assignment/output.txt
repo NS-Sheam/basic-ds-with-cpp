@@ -1,2 +1,7 @@
- st top 40 q front 10
+YES
+NO
+YES
+YES
+NO
+YES
 NO
