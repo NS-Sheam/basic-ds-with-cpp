@@ -23,57 +23,57 @@ Node *input_tree()
         root = NULL;
     else
         root = new Node(val);
+
     queue<Node *> q;
+
     if (root)
         q.push(root);
 
     while (!q.empty())
-
     {
-        // 1. ber kore ana
-        Node *p = q.front();
+        Node *f = q.front();
         q.pop();
 
-        // 2. oi node ke niye kaj kora
         int l, r;
         cin >> l >> r;
         Node *myLeft, *myRight;
+
         if (l == -1)
             myLeft = NULL;
         else
+        {
             myLeft = new Node(l);
-        ;
+        }
+        f->left = myLeft;
         if (r == -1)
             myRight = NULL;
         else
             myRight = new Node(r);
+        f->right = myRight;
 
-        p->left = myLeft;
-        p->right = myRight;
-
-        // 2. oi node ke niye kaj;
-        if (p->left)
-            q.push(p->left);
-        if (p->right)
-            q.push(p->right);
+        if (f->left)
+            q.push(f->left);
+        if (f->right)
+            q.push(f->right);
     }
 
     return root;
 }
 
-void level_order(Node *root)
+void print_level_order(Node *root)
 {
+
     if (!root)
-    {
-        cout << "No Tree";
         return;
-    }
 
     queue<Node *> q;
     q.push(root);
+
     while (!q.empty())
     {
+
         Node *f = q.front();
+
         q.pop();
 
         cout << f->val << " ";
@@ -85,10 +85,24 @@ void level_order(Node *root)
     }
 }
 
+int count_nodes(Node *root)
+{
+    int count = 0;
+    if (root == NULL)
+    {
+        return 0;
+    }
+    int l = count_nodes(root->left);
+    int r = count_nodes(root->right);
+    return l + r + 1;
+}
+
 int main()
 {
     Node *root = input_tree();
-    level_order(root);
+    print_level_order(root);
+    cout << endl;
+    cout << count_nodes(root) << endl;
 
     return 0;
 }
