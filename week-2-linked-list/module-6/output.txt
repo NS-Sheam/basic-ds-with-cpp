@@ -1,0 +1,4 @@
+0x149e06110
+0x149e06130
+0x149e06090
+The middle element is 8
