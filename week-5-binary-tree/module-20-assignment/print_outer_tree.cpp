@@ -115,9 +115,6 @@ int main()
 {
 
     Node *root = input_tree();
-    // int val;
-    // cin >> val;
-    // level_order(root);
     vector<int> l, r;
     printLeft(root->left, l);
     printRight(root->right, r);
