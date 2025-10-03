@@ -1,6 +1,7 @@
 {
   "files.associations": {
     "*.dbclient-js": "javascript",
-    "map": "cpp"
+    "map": "cpp",
+    "queue": "cpp"
   }
 }
